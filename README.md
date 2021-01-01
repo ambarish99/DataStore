@@ -14,7 +14,7 @@ DataStoreInterface dataStore=DataStore.getInstance();
 ```
 or
 ```sh
-DataStoreInterface dataStore=DataStore.getInstance("C:\path to desired file\file.abc"); 
+DataStoreInterface dataStore=DataStore.getInstance("C:\\path to desired file\\file.abc"); 
 ```
 * If path is not provided then it will get instantiated in the default location C:\dataStoreData\store.data otherwise in the file name provided.
 * Client can instantiate in multiple files but for any file only it's one instnace will be returned.
@@ -49,5 +49,10 @@ javac -classpath c:\DataStore\dist\*;. yourFileName.java
 ```sh
 java -classpath c:\DataStore\dist\*;. classFileName
 ```
+## Description
+* The code written in library is thread safe.
+* Not more than one process can access the same file at any instant of time.
+* This library is tested on windows-10 operating system.
 
+## thanking you
 
