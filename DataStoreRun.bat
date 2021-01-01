@@ -1,0 +1,1 @@
+java -classpath c:\DataStore\dist\*;. Service
