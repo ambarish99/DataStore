@@ -1,5 +1,5 @@
 # DataStore
-This is a file based key-vaue dataStore, for storing data in a file.
+This is a file based key-vaue dataStore created in java, for storing data in a file.
 
 ## Steps of installation
 * Create a folder named "DataStore" in C:\ drive of your windows system and clone this repository in that folder.(All the files and folders must be under DataStore folder).
