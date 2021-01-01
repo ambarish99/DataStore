@@ -54,6 +54,7 @@ java -classpath c:\DataStore\dist\*;. classFileName
 * The code written in library is thread safe.
 * Not more than one process can access the same file at any instant of time.
 * This library is tested on windows-10 operating system.
+* JDK must be installed in your system to use this library.
 ## A full code snipet for understanding
 ```sh
 import com.freshworks.dataStore.DataStore;
