@@ -1,1 +1,1 @@
-java -classpath c:\DataStore\dist\*;. Service
+java -classpath c:\DataStore\dist\*;c:\DataStore;. Service
