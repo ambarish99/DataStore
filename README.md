@@ -27,6 +27,7 @@ ex: dataStore.create("ABC","{\"abc\":\"pqr\"}",67577);
 * If key already exists or json is invalid then it will throw DatStoreException.
 * If fle size exceeds 1GB then it will throw DatStoreException.
 * If key passed is more than 32 characters then it will throw DatStoreException.
+* If the JSON passed is more than 16 KB then it will throw DataStoreException
 ### To get json data 
 ```sh
 public String get(String key);
@@ -53,6 +54,52 @@ java -classpath c:\DataStore\dist\*;. classFileName
 * The code written in library is thread safe.
 * Not more than one process can access the same file at any instant of time.
 * This library is tested on windows-10 operating system.
+## A full code snipet for understanding
+```sh
+import com.freshworks.dataStore.DataStore;
+import com.freshworks.dataStore.exceptions.*;
+import com.freshworks.dataStore.interfaces.DataStoreInterface;
+public class test1 {
+   public static void main(String arg[])
+   {
+      try{
+         DataStoreInterface dsi,dsi2,dsi3;
+      //get instanece of store at default location - C:\dataStoreData\store.data
+      dsi=DataStore.getInstance();
+      
+      //create and key and strore key value pair to store
+      dsi.create("ABC","{\"name\":\"abc\"}" );
+      dsi.create("XYZ","{\"name\":\"xyz\"}" );
+      //get method to get  json against key ABC
+      String abc=dsi.get("ABC");
+      System.out.println(abc);
 
-## thanking you
+      String xyz=dsi.get("XYZ");
+      System.out.println(xyz);
+      
+      //delete key and value against key ABC, it will return true if deleted successfully elese return false if key not found
+      boolean isDel=dsi.delete("ABC");
+      System.out.println(isDel);
+      isDel=dsi.delete("XYZ");
+      System.out.println(isDel);
+
+      dsi2=DataStore.getInstance();
+      System.out.println(dsi2.get("ABC"));
+
+      dsi3=DataStore.getInstance("C:\\ddStore\\pqr.aa");
+      dsi3.create("PQR", "{\"name\":\"pqr\"}");
+         
+
+      }catch(Exception e)
+      {
+         e.printStackTrace();
+         System.out.println(e.getMessage());
+      }
+   }
+   
+}
+
+```
+
+## Thanking you
 
