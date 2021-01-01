@@ -7,7 +7,7 @@ This is a file based key-vaue dataStore, for storing data in a file.
 * To find tbat stratup folder press **windows+R** key and then in text box type **shell:startup** then click **OK**. The required folder will get open, in that folder put **DataStoreRun.bat** file.
 * Now the installation setup is done.
 
-## How to use ths library
+## How to use this library
 ### To instantiate the library
 ```sh
 DataStoreInterface dataStore=DataStore.getInstance();
@@ -39,5 +39,15 @@ public boolean delete(String key);
 ex: dataStore.delete("ABC");
 ```
 * This method will delete the key and data against that key if key is found. If found deleted then it will return true otherwise false. this method throws DataStoreException.
+
+### To compile and run the program
+**To compile:**  Add jar files in dist folder to your classpath
+```sh
+javac -classpath c:\DataStore\dist\*;. yourFileName.java
+```
+**To run:** Add jar files in dist folder to your classpath
+```sh
+java -classpath c:\DataStore\dist\*;. classFileName
+```
 
 
