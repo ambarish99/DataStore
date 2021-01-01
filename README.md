@@ -25,15 +25,19 @@ ex: dataStore.create("ABC","{\"abc\":\"pqr\"}",67577);
 ```
 * Third parameter time-to-live(in seconds) is optional, if provided then the key will be valid for only upto that durtion of time.
 * If key already exists or json is invalid then it will throw DatStoreException.
+* If fle size exceeds 1GB then it will throw DatStoreException.
+* If key passed is more than 32 characters then it will throw DatStoreException.
 ### To get json data 
 ```sh
 public String get(String key);
 ex: dataStore.get("ABC");
 ```
-* To get data, pass the key for that data. If key is found then it will return JSON string for that, otherwise it will return null. throws DataStoreException.
+* To get data, pass the key for that data. If key is found then it will return JSON string for that, otherwise it will return null. this method throws DataStoreException.
 ### To delete data
 ```sh
 public boolean delete(String key);
 ex: dataStore.delete("ABC");
 ```
-* This method will delete the key and data against that key if key is found. If found deleted then it will return true otherwise false. throws DataStoreException
+* This method will delete the key and data against that key if key is found. If found deleted then it will return true otherwise false. this method throws DataStoreException.
+
+
